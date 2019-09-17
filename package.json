@@ -1,0 +1,34 @@
+{
+  "name": "member-skills-sync-lambda",
+  "version": "1.0.0",
+  "description": "topcoder project to sync member skills from DynamoDB to ElasticSearch via Lambda",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix",
+    "test-data": "node test/testData.js",
+    "test": "nyc --reporter=html --reporter=text mocha test/test.js --timeout 20000 --exit"
+  },
+  "author": "TCSCODER",
+  "license": "none",
+  "dependencies": {
+    "aws-sdk": "^2.466.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "should": "^13.2.3"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "test/*.js"
+    ]
+  }
+}

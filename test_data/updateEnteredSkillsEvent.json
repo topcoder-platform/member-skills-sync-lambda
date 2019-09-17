@@ -1,0 +1,86 @@
+{
+  "Records": [
+    {
+      "eventID": "502a087305504a9b7ed7129be886b6dd",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1568098462,
+        "Keys": {
+          "userId": {
+            "N": "40309246"
+          }
+        },
+        "NewImage": {
+          "skills": {
+            "M": {
+              "315": {
+                "S": "{\"hidden\":false}"
+              },
+              "323": {
+                "S": "{\"hidden\":true}"
+              }
+            }
+          },
+          "userHandle": {
+            "S": "thomaskranitsas"
+          },
+          "createdAt": {
+            "N": "1545685680000"
+          },
+          "updatedBy": {
+            "S": "40309246"
+          },
+          "createdBy": {
+            "S": "40309246"
+          },
+          "userId": {
+            "N": "40309246"
+          },
+          "handleLower": {
+            "S": "thomaskranitsas"
+          },
+          "updatedAt": {
+            "S": "2019-09-10T21:08Z"
+          }
+        },
+        "OldImage": {
+          "skills": {
+            "M": {
+              "315": {
+                "S": "{\"hidden\":true}"
+              }
+            }
+          },
+          "userHandle": {
+            "S": "thomaskranitsas"
+          },
+          "createdAt": {
+            "N": "1545685680000"
+          },
+          "updatedBy": {
+            "S": "40309246"
+          },
+          "createdBy": {
+            "S": "40309246"
+          },
+          "userId": {
+            "N": "40309246"
+          },
+          "handleLower": {
+            "S": "thomaskranitsas"
+          },
+          "updatedAt": {
+            "N": "1545685680000"
+          }
+        },
+        "SequenceNumber": "9013000000000009201403632",
+        "SizeBytes": 350,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:151253753676:table/MemberEnteredSkills/stream/2019-09-08T09:11:05.328"
+    }
+  ]
+}

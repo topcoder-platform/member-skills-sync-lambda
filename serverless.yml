@@ -1,0 +1,52 @@
+service: member-skills-dynamodb-es-sync
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+  stage: ${opt:stage, 'dev'} # Set the default stage used. Default is dev
+  region: ${opt:region, 'us-east-1'} # Overwrite the default region used. Default is us-east-1
+  stackName: serverless-member-skills-sync
+
+# you can add packaging information here
+package:
+  include:
+   - index.js
+  exclude:
+   - README.md
+   - Verification.md
+   - doc/**
+   - node_modules/**
+   - test/**
+   - test_data/**
+   - package*.json
+   - serverless.yml
+   - coverage/**
+   - .nyc_output/**
+
+functions:
+  sync:
+    handler: index.handleSync
+    role: ${env:LAMBDA_ROLE}
+    description: Function to sync Dynamo DB member skills to Elastic Search # The description of your function
+    timeout: 30
+    events:
+     - stream:
+        arn: ${env:DB_ENTERED_SKILLS_STREAM}
+        batchSize: 100
+        startingPosition: LATEST
+        enabled: true
+     - stream:
+        arn: ${env:DB_AGGREGATED_SKILLS_STREAM}
+        batchSize: 100
+        startingPosition: LATEST
+        enabled: true
+    environment:
+      ES_ENDPOINT: ${env:ES_ENDPOINT}
+      ES_REGION: ${env:ES_REGION}
+      ES_ENTERED_SKILLS_INDEX: ${env:ES_ENTERED_SKILLS_INDEX}
+      ES_ENTERED_SKILLS_DOCTYPE: ${env:ES_ENTERED_SKILLS_DOCTYPE}
+      ES_AGGREGATED_SKILLS_INDEX: ${env:ES_AGGREGATED_SKILLS_INDEX}
+      ES_AGGREGATED_SKILLS_DOCTYPE: ${env:ES_AGGREGATED_SKILLS_DOCTYPE}
+      DB_ENTERED_SKILLS_STREAM: ${env:DB_ENTERED_SKILLS_STREAM}
+      DB_AGGREGATED_SKILLS_STREAM: ${env:DB_AGGREGATED_SKILLS_STREAM}

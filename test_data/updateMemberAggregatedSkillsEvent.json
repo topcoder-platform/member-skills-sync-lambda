@@ -1,0 +1,83 @@
+{
+  "Records": [
+    {
+      "eventID": "722bbad7f6c6f52977757e6e254b46c9",
+      "eventName": "MODIFY",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1568101051,
+        "Keys": {
+          "userId": {
+            "N": "40309246"
+          }
+        },
+        "NewImage": {
+          "skills": {
+            "M": {
+              "286": {
+                "S": "{\"tagName\":\"Node.js\",\"hidden\":false,\"score\":58,\"sources\":[\"CHALLENGE\"]}"
+              }
+            }
+          },
+          "userHandle": {
+            "S": "thomaskranitsas"
+          },
+          "createdAt": {
+            "N": "1545685680000"
+          },
+          "updatedBy": {
+            "S": "40309246"
+          },
+          "createdBy": {
+            "S": "40309246"
+          },
+          "userId": {
+            "N": "40309246"
+          },
+          "handleLower": {
+            "S": "thomaskranitsas"
+          },
+          "updatedAt": {
+            "N": "1568101038667"
+          }
+        },
+        "OldImage": {
+          "skills": {
+            "M": {
+              "284": {
+                "S": "{\"tagName\":\"MySql\",\"hidden\":false,\"score\":3,\"sources\":[\"CHALLENGE\",\"USER_ENTERED\"]}"
+              }
+            }
+          },
+          "userHandle": {
+            "S": "thomaskranitsas"
+          },
+          "createdAt": {
+            "N": "1545685680000"
+          },
+          "updatedBy": {
+            "S": "40309246"
+          },
+          "createdBy": {
+            "S": "40309246"
+          },
+          "userId": {
+            "N": "40309246"
+          },
+          "handleLower": {
+            "S": "thomaskranitsas"
+          },
+          "updatedAt": {
+            "N": "1545685680000"
+          }
+        },
+        "SequenceNumber": "9101600000000008216606734",
+        "SizeBytes": 445,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:151253753676:table/MemberAggregatedSkills/stream/2019-09-08T09:10:57.423"
+    }
+  ]
+}

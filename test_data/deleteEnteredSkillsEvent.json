@@ -1,0 +1,56 @@
+{
+  "Records": [
+    {
+      "eventID": "8d8781f70fe3252a89528fe29c45e739",
+      "eventName": "REMOVE",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": 1568098540,
+        "Keys": {
+          "userId": {
+            "N": "40309246"
+          }
+        },
+        "OldImage": {
+          "skills": {
+            "M": {
+              "315": {
+                "S": "{\"hidden\":false}"
+              },
+              "323": {
+                "S": "{\"hidden\":true}"
+              }
+            }
+          },
+          "userHandle": {
+            "S": "thomaskranitsas"
+          },
+          "createdAt": {
+            "N": "1545685680000"
+          },
+          "updatedBy": {
+            "S": "40309246"
+          },
+          "createdBy": {
+            "S": "40309246"
+          },
+          "userId": {
+            "N": "40309246"
+          },
+          "handleLower": {
+            "S": "thomaskranitsas"
+          },
+          "updatedAt": {
+            "S": "2019-09-10T21:08Z"
+          }
+        },
+        "SequenceNumber": "9013100000000009201428941",
+        "SizeBytes": 196,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:151253753676:table/MemberEnteredSkills/stream/2019-09-08T09:11:05.328"
+    }
+  ]
+}
